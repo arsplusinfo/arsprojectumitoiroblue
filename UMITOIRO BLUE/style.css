@@ -444,7 +444,13 @@ a { color: inherit; }
 .lead .inner { position: relative; z-index: 1; }
 .lead p { margin-bottom: 0; }
 .lead p + p { position: relative; margin-top: 64px; }
-.lead p + p::before { content: ""; position: absolute; top: -36px; left: 50%; width: 84px; height: 2px; transform: translateX(-50%); background: linear-gradient(90deg, transparent 0%, var(--sky) 30%, var(--sky) 38%, transparent 38%, transparent 62%, var(--green) 62%, var(--green) 70%, transparent 100%); }
-.lead p + p::after { content: ""; position: absolute; top: -40px; left: 50%; width: 9px; height: 9px; margin-left: -4.5px; transform: rotate(45deg); background: linear-gradient(135deg, var(--sky), var(--green)); }
 .lead p.strong { margin-top: 36px; }
-.lead p.strong::before, .lead p.strong::after { display: none; }
+
+/* 中央そろえの文章:行の長さをそろえて、1文字だけの折り返しを防ぐ */
+.body.center, .small.center, .note-box p { text-wrap: balance; word-break: auto-phrase; line-break: strict; }
+
+/* 「どんな人生を歩んできたのか」のまとまり */
+.q-list { margin-bottom: 22px; padding: 18px 20px; background: linear-gradient(135deg, #f1f8fc 0%, #eef6ea 100%); border: 1px solid var(--line); border-radius: 16px; }
+.q-list li { position: relative; padding-left: 28px; line-height: 1.9; }
+.q-list li + li { margin-top: 8px; }
+.q-list li::before { content: ""; position: absolute; left: 3px; top: .72em; width: 12px; height: 12px; border-radius: 50%; background: linear-gradient(135deg, var(--sky), var(--green)); box-shadow: 0 0 0 3px rgba(125,184,216,.2); }
