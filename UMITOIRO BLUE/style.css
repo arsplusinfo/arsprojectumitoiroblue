@@ -454,3 +454,21 @@ a { color: inherit; }
 .q-list li { position: relative; padding-left: 28px; line-height: 1.9; }
 .q-list li + li { margin-top: 8px; }
 .q-list li::before { content: ""; position: absolute; left: 3px; top: .72em; width: 12px; height: 12px; border-radius: 50%; background: linear-gradient(135deg, var(--sky), var(--green)); box-shadow: 0 0 0 3px rgba(125,184,216,.2); }
+
+/* 言葉のかたまりの途中で改行しない(iPhoneのSafariでも効く) */
+.nb { white-space: nowrap; }
+
+/* 「でも、日常に戻ると…」のまわりの飾り(四隅のかぎ括弧+上下の菱形) */
+.lead .big { position: relative; padding: 38px 18px; background:
+  linear-gradient(var(--sky), var(--sky)) left top / 38px 2px no-repeat,
+  linear-gradient(var(--sky), var(--sky)) left top / 2px 38px no-repeat,
+  linear-gradient(var(--green), var(--green)) right top / 38px 2px no-repeat,
+  linear-gradient(var(--green), var(--green)) right top / 2px 38px no-repeat,
+  linear-gradient(var(--sky), var(--sky)) left bottom / 38px 2px no-repeat,
+  linear-gradient(var(--sky), var(--sky)) left bottom / 2px 38px no-repeat,
+  linear-gradient(var(--green), var(--green)) right bottom / 38px 2px no-repeat,
+  linear-gradient(var(--green), var(--green)) right bottom / 2px 38px no-repeat,
+  rgba(255,255,255,.55); border-radius: 4px; }
+.lead .big::before, .lead .big::after { content: ""; position: absolute; left: 50%; width: 9px; height: 9px; margin-left: -4.5px; transform: rotate(45deg); background: linear-gradient(135deg, var(--sky), var(--green)); }
+.lead .big::before { top: -4.5px; }
+.lead .big::after { bottom: -4.5px; }
